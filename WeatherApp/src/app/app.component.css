@@ -41,6 +41,7 @@
 }
 
 .location{
+    user-select: none;
     margin-top: 33px;
     color: white;
     text-align: center;
@@ -49,6 +50,7 @@
 }
 
 .temperature{
+    user-select: none;
     color: white;
     font-size: 4em;
     text-align: center;
@@ -75,6 +77,13 @@
 
 }
 
+.headerContainer{
+    background-color: #ba03fc;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .info-block{
     width: 50%;
     display: flex;
@@ -96,3 +105,6 @@
     font-weight: bold;
 }
 
+.infoblockrow{
+    width: 100%;
+}
