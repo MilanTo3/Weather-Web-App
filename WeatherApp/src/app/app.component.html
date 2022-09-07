@@ -1,11 +1,14 @@
 <div class="container">
-  <div class="upper-data" [ngClass]="temp < 20 ? 'night' : 'day'">
+  <div class="upper-data" [ngClass]="temp < 20 ? 'cold' : 'hot'">
     
     <div class="location">Wellington</div>
-    <div class="temperature">{{ temp | number: '1.0-0' }}</div>
+    <div class="temperature">{{ temp | number: '1.0-0' }} °C</div>
   </div>
   <div class="lower-data">
-
+    More information:
+    <div class="more-info-label">
+      
+    </div>
   </div>
 </div>
 

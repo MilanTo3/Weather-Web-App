@@ -1,9 +1,13 @@
-.night{
-    background-color: blueviolet;
+.cold{
+    background-image: url(/assets/image_part_002.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
-.day{
-    background-color: yellow;
+.hot{
+    background-image: url(/assets/image_part_001.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .container{
@@ -24,12 +28,6 @@
     border-top-right-radius: 20px;
 }
 
-.location{
-    margin-top: 124px;
-    color: white;
-    
-}
-
 .weather-data{
     position: relative;
     z-index: 1;
@@ -43,9 +41,11 @@
 }
 
 .location{
+    margin-top: 33px;
     color: white;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.4em;
+    text-shadow: 2px 2px black;
 }
 
 .temperature{
@@ -53,4 +53,5 @@
     font-size: 4em;
     text-align: center;
     font-weight: 900;
+    text-shadow: 2px 2px black;
 }
