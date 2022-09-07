@@ -1,14 +1,53 @@
 <div class="container">
-  <div class="upper-data" [ngClass]="temp < 20 ? 'cold' : 'hot'">
+  <div class="upper-data" [ngClass]="temp < 17 ? 'cold' : 'hot'">
     
     <div class="location">Wellington</div>
     <div class="temperature">{{ temp | number: '1.0-0' }} °C</div>
   </div>
   <div class="lower-data">
-    More information:
     <div class="more-info-label">
-      
+      More Information:
     </div>
+
+    <div class="more-info-container">
+      <div class="info-block">
+        <div class="info-block-label">
+          <span>Min.</span>
+        </div>
+        <div class="info-block-value">
+          10 °C
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <span>Max.</span>
+        </div>
+        <div class="info-block-value">
+          20 °C
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <span>Min.</span>
+        </div>
+        <div class="info-block-value">
+          20 °C
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <span>Wind.</span>
+        </div>
+        <div class="info-block-value">
+          11.83 km/H
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </div>
 
