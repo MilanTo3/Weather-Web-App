@@ -1,8 +1,9 @@
 <div class="container">
   <div class="upper-data" [ngClass]="weatherData.main.temp < 17 ? 'cold' : 'hot'">
     
-    <div class="location">{{weatherData.name}}</div>
+    <div class="location">{{weatherData.name}}, {{ weatherData.weather[0].description }}</div>
     <div class="temperature">{{ weatherData.main.temp | number: '1.0-0' }} °C</div>
+
   </div>
   <div class="lower-data">
     <div class="more-info-label">
@@ -10,15 +11,6 @@
     </div>
 
     <div>
-
-      <div class="headerContainer" style="display:inline; width: 100%;">
-        <div>
-          <span>Description.</span>
-        </div>
-        <div class="info-block-value">
-          {{ weatherData.weather[0].description }}
-        </div>
-      </div>      
 
       <div class="more-info-container">
         <div class="info-block">
@@ -60,8 +52,13 @@
 
     </div>
 
+    <div class="search-tag">
+      <label for="fname">Enter a place: </label>
+      <input type="text" id="fname" name="fname">
+      <button class="enterButton">Go!</button>
+    </div>
   </div>
+  
 </div>
-
 
 <router-outlet></router-outlet>
