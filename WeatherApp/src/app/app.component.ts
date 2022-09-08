@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   title = 'WeatherApp';
   temp = 0;
   weatherData!: WeatherData;
-
+  cityName = "Zagreb";
 
   constructor(private weatherServ: WeatherServiceService){
 
@@ -26,6 +26,20 @@ export class AppComponent implements OnInit {
       }
 
     });
+  }
+
+  changelocation(){
+
+    
+    this.weatherServ.getWeatherData(this.cityName).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.weatherData = res;
+        
+      }
+
+    });
+
   }
 
 }

@@ -52,11 +52,11 @@
 
     </div>
 
-    <div class="search-tag">
+    <form #form="ngForm" (submit)="changelocation()" class="search-tag">
       <label for="fname">Enter a place: </label>
-      <input type="text" id="fname" name="fname">
+      <input type="text" id="fname" name="fname" [(ngModel)]="cityName">
       <button class="enterButton">Go!</button>
-    </div>
+    </form>
   </div>
   
 </div>
