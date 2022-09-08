@@ -125,7 +125,10 @@
 
 .search-tag input{
     border-radius: 9px;
-    height: 24px;
+    height: 25px;
+    background-color: #ba03fc;
+    color:white;
+    font-weight: bold;
 }
 
 .enterButton{

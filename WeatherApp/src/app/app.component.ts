@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherData, Wind } from './models/weather.model';
 import { WeatherServiceService } from './services/weather-service.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent implements OnInit {
   weatherData!: WeatherData;
   cityName = "Zagreb";
 
-  constructor(private weatherServ: WeatherServiceService){
+  constructor(private weatherServ: WeatherServiceService, private toastrServ: ToastrService){
 
   }
 
@@ -36,6 +37,9 @@ export class AppComponent implements OnInit {
         console.log(res);
         this.weatherData = res;
         
+      },
+      error: (err) => {
+        this.toastrServ.error("No such city!");
       }
 
     });
