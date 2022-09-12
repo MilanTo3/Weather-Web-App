@@ -8,42 +8,12 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  title = 'WeatherApp';
-  temp = 0;
-  weatherData!: WeatherData;
-  cityName = "Zagreb";
+export class AppComponent {
 
-  constructor(private weatherServ: WeatherServiceService, private toastrServ: ToastrService){
+  constructor(){
 
   }
 
-  ngOnInit(): void {
-    this.weatherServ.getWeatherData('Zagreb').subscribe({
-      next: (res) => {
-        console.log(res);
-        this.weatherData = res;
-        
-      }
-
-    });
-  }
-
-  changelocation(){
-
-    
-    this.weatherServ.getWeatherData(this.cityName).subscribe({
-      next: (res) => {
-        console.log(res);
-        this.weatherData = res;
-        
-      },
-      error: (err) => {
-        this.toastrServ.error("No such city!");
-      }
-
-    });
-
-  }
+  
 
 }

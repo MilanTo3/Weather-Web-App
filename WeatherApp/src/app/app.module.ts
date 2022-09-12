@@ -7,10 +7,14 @@ import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModuleModule } from './material-module.module';
+import { WeatherCompComponent } from './component/weather-comp/weather-comp.component';
+import { MapCompComponent } from './component/map-comp/map-comp.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WeatherCompComponent,
+    MapCompComponent
   ],
   imports: [
     BrowserModule,
