@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { WeatherData } from 'src/app/models/weather.model';
 import { WeatherServiceService } from 'src/app/services/weather-service.service';
@@ -15,7 +16,7 @@ export class WeatherCompComponent implements OnInit {
   weatherData!: WeatherData;
   cityName = "Zagreb";
 
-  constructor(private weatherServ: WeatherServiceService, private toastrServ: ToastrService){
+  constructor(private weatherServ: WeatherServiceService, private toastrServ: ToastrService, private router: Router){
 
   }
 
@@ -45,6 +46,10 @@ export class WeatherCompComponent implements OnInit {
 
     });
 
+  }
+
+  changeRoute(){
+    this.router.navigate(['/map']);
   }
 
 }

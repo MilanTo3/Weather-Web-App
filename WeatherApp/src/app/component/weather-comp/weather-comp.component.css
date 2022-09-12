@@ -146,6 +146,17 @@
     height: 34px;
 }
 
+.routeButton{
+    border-radius: 4px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    height: 34px;
+}
+
 .mat-form-field{
     font-size: 17px;
 }
