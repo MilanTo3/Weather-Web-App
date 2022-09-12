@@ -55,6 +55,7 @@
 }
 
 .temperature{
+    margin-top: 24px;
     user-select: none;
     color: white;
     font-size: 4em;
@@ -117,13 +118,16 @@
 }
 
 .search-tag{
+    display: inline-block;
     text-align: center;
     margin-top: 24px;
     color:white;
     font-weight: bold;
+    width: 75%;
 }
 
 .search-tag input{
+    display: inline-block;
     border-radius: 9px;
     height: 25px;
     background-color: #ba03fc;
@@ -137,7 +141,15 @@
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    padding: 8px 24px;
     text-align: center;
     text-decoration: none;
+    height: 34px;
+}
+
+.mat-form-field{
+    font-size: 17px;
+}
+
+.enterLabel{
+    color:white;
 }
