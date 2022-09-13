@@ -6,8 +6,8 @@ import { MapCompComponent } from './component/map-comp/map-comp.component';
 const routes: Routes = [
 
   { path: "", redirectTo: "weather", pathMatch: "full" },
-  { path: "weather", component: WeatherCompComponent },
-  { path: "map", component: MapCompComponent }
+  { path: "weather", component: WeatherCompComponent, data: { animation: 'isLeft' } },
+  { path: "map", component: MapCompComponent, data: { animation: 'isRight' } }
 
 ];
 
