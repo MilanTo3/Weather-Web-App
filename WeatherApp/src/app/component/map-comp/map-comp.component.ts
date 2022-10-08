@@ -8,7 +8,7 @@ import View from 'ol/View';
 import { OSM } from 'ol/source';
 import TileLayer from 'ol/layer/Tile';
 import { fromLonLat } from 'ol/proj';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-map-comp',
@@ -23,12 +23,15 @@ export class MapCompComponent implements OnInit {
   cityName = "Zagreb";
   public map!: Map
 
-  constructor(private weatherServ: WeatherServiceService, private toastrServ: ToastrService, private router: Router){
+  constructor(private weatherServ: WeatherServiceService, private toastrServ: ToastrService, private router: Router, private route: ActivatedRoute){
 
   }
 
   ngOnInit(): void {
-    this.weatherServ.getWeatherData('Zagreb').subscribe({
+
+    this.cityName = this.route.snapshot.paramMap.get('term')!;
+
+    this.weatherServ.getWeatherData(this.cityName).subscribe({
       next: (res) => {
         console.log(res);
         this.weatherData = res;
@@ -75,7 +78,7 @@ export class MapCompComponent implements OnInit {
   }
 
   changeRoute(){
-    this.router.navigate(['/weather']);
+    this.router.navigate(['/weather', this.cityName]);
   }
 
 }

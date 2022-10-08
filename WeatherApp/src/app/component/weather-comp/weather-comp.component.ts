@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { WeatherData } from 'src/app/models/weather.model';
 import { WeatherServiceService } from 'src/app/services/weather-service.service';
@@ -16,12 +16,15 @@ export class WeatherCompComponent implements OnInit {
   weatherData!: WeatherData;
   cityName = "Zagreb";
 
-  constructor(private weatherServ: WeatherServiceService, private toastrServ: ToastrService, private router: Router){
+  constructor(private weatherServ: WeatherServiceService, private toastrServ: ToastrService, private router: Router, private route: ActivatedRoute){
 
   }
 
   ngOnInit(): void {
-    this.weatherServ.getWeatherData('Zagreb').subscribe({
+
+    this.cityName = this.route.snapshot.paramMap.get('term')!;
+
+    this.weatherServ.getWeatherData(this.cityName).subscribe({
       next: (res) => {
         console.log(res);
         this.weatherData = res;
@@ -49,7 +52,7 @@ export class WeatherCompComponent implements OnInit {
   }
 
   changeRoute(){
-    this.router.navigate(['/map']);
+    this.router.navigate(['/map', this.cityName]);
   }
 
 }

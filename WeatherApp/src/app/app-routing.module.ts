@@ -5,9 +5,9 @@ import { MapCompComponent } from './component/map-comp/map-comp.component';
 
 const routes: Routes = [
 
-  { path: "", redirectTo: "weather", pathMatch: "full" },
-  { path: "weather", component: WeatherCompComponent, data: { animation: 'isLeft' } },
-  { path: "map", component: MapCompComponent, data: { animation: 'isRight' } }
+  { path: "", redirectTo: "weather/Zagreb", pathMatch: "full" },
+  { path: "weather/:term", component: WeatherCompComponent, data: { animation: 'isLeft' } },
+  { path: "map/:term", component: MapCompComponent, data: { animation: 'isRight' } }
 
 ];
 
